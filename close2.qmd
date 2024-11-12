@@ -1,0 +1,199 @@
+---
+title: "QUARTO: Close-read"
+subtitle: "Prueba preliminar para hacer una expo "
+format: 
+  closeread-html:
+    image: scream.jpg
+    code-tools: true
+    code-line-numbers: true
+    code-block-bg: true
+    fontsize: 18pt
+    lightbox: true
+    cr-style:
+      narrative-background-color-overlay: transparent
+      narrative-background-color-sidebar: transparent
+      section-background-color: transparent
+      narrative-text-color-overlay: black
+author: Oscar chullo Puclla
+image: true
+footer: quarto.org
+lang: es
+institute: Universidad Nacional de San Antonio Abad del Cusco
+code-fold: show
+mathfont: lualatex
+---
+
+
+
+:::{.epigraph}
+>Hola esta parte es el epigrafo o parrafo introductorio a nivel general.
+>Hi World! Please read my Close-read story below.
+:::
+
+# Titulo nivel 1
+Texto nivel 1
+
+## Titulo nivel 2
+Texto nivel 2
+
+### Titulo nivel 3
+Texto nivel 3. Se puede ver que se mantiene el formato de escritura de R-markdown 
+
+## Scrollytelling with QUARTO:closeread
+Aqui inician los comando iniciales: 
+
+:::{.cr-section}
+# Title1
+
+Esta parte del texto es relleno en el que se especifica una sección llamada ".cr-section" y para tener la referencia imagen inicial se crea otra seccion llamada ´/#cr-"nombre de referencia"´ el cual se muestra en la parte derecha, en esta última se debe colocar la imagen la cual se va a asociar la imagen inicial. @cr-map
+
+:::{#cr-map}
+![](minard-large.png)
+:::
+
+En esta parte se puede ver como podemos manipular la imagen referenciada escalando en formato HTML para dirigirse a un sector en especifico [@cr-map]{pan-to="70%,-10%" scale-by="2.1"}
+
+Se puede ver que es bastante útil para cuando se pretende contar una historia de mabera interactiva.
+
+Esta es otra esclación d ela imagen, la forma de la transicion es muy interesante. [@cr-map]{pan-to="-55%,10%" scale-by="1.5"}
+
+Sin embargo, investigare un poco más para cambiar el background con un color temático y variante de acuerdo a la historia o al titulo de nivel 1, 2 o 3 dentro de este closeread [@cr-map]{pan-to="-25%,10%" scale-by="1.5"}
+
+Escalmos una vez mas [@cr-map]{pan-to="18%,-15%" scale-by="2.4"}
+
+esto se puyede hacer de forma que uno especifica la seccion de una imagen o cuadro que sea efectiva en una expo.
+
+Podemos volver al escalado inicial @cr-map
+
+Solo basta con tener clara la referenciación cruzada bien definida para hacer posible estas maravillas.
+
+Se pueden ver mas cosas
+
+Los saltos de párrafo de QUARTO
+
+Son efectivos para esto.
+
+Se ve interesante la presentacion HTML
+
+Thank you so much!!!
+
+:::
+
+:::{.cr-section}
+# titulo 1
+Texto nivel 1 dentro de otra sección @cr-map2
+
+:::{#cr-map2}
+![](imagen2.jpg){.lightbox}
+:::
+
+texto de relleno 1
+
+texto de relleno 2 [@cr-map2]{pan-to="-55%,10%" scale-by="1.5"}
+
+texto de relleno 3 
+
+## Titulo nivel 2
+Texto nivel 2 @cr-map2
+
+### Titulo nivel 3
+Texto nivel 3. Se puede ver que se mantiene el formato de escritura de R-markdown @cr-map2
+
+The end of the third and fourth line also rhyme and are nudged in a bit. [@cr-limerick]{highlight="3-4"}
+
+| {#cr-limerick}
+| There was a young rustic named [Mallory]{#cr-mallory},
+| who drew but a very small [salary]{#cr-salary}.
+|   When he went to the show,
+|   his purse made him go
+| to a seat in the uppermost gallery.
+
+The end of the first two lines of a Limerick must rhyme. [@cr-limerick]{highlight="cr-mallory,cr-salary"}
+
+| {#cr-limerick}
+| There was a young rustic named [Mallory]{#cr-mallory},
+| who drew but a very small [salary]{#cr-salary}.
+|   When he went to the show,
+|   his purse made him go
+| to a seat in the uppermost gallery.
+
+This is the first limerick ever recorded. @cr-limerick
+
+| {#cr-limerick .scale-to-fill}
+| There was a young rustic named [Mallory]{#cr-mallory},
+| who drew but a very small [salary]{#cr-salary}.
+|   When he went to the show,
+|   his purse made him go
+| to a seat in the uppermost gallery.
+
+
+:::
+
+:::{.cr-section} 
+< add code cells>
+
+This is where we load the library. [@cr-dplyr1]{highlight="1,2"}
+
+:::{#cr-dplyr1}
+```{r,echo=TRUE,eval=FALSE}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |>
+  group_by(island) |>
+  summarize(avg_bill_length = mean(bill_length_mm))
+```
+:::
+
+This calculates summary statistics. [@cr-dplyr1]{highlight="4-6"}
+
+
+This calculates summary statistics. [@cr-dplyr]{highlight="4-6"}
+
+:::{#cr-dplyr}
+```{r,echo=TRUE,message=FALSE}
+library(dplyr)
+library(palmerpenguins)
+
+penguins |>
+  group_by(island) |>
+  summarize(avg_bill_length = mean(bill_length_mm))
+```
+:::
+
+esta es una equación acaso? @cr-hidden
+
+::: {#cr-hidden}
+$$1+1=x*2$$
+:::
+
+veamos si sale la ecuación? 
+
+Se pueden ver mas cosas
+
+Los saltos de párrafo de QUARTO
+
+Son efectivos para esto.
+
+::: {#cr-eq2}
+$1+1=x*2$ \
+$x^2$ \
+$\sqrt{25}$ \
+$x=1$
+:::
+
+Bla bla [@cr-eq2]{highlight="1,2"}
+
+ta ta 
+
+rr
+rr
+
+rrr
+rrr
+
+rrrr
+
+
+:::
+
